@@ -30,6 +30,12 @@ public class Program {
 			System.out.println(obj2);
 		}
 
+		System.out.println("\n\n====== Teste 3: Seller findAll =======");
+		list = sellerDao.findAll();
+		for (Seller obj2 : list) {
+			System.out.println(obj2);
+		}
+
 
 	}
 
