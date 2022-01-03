@@ -1,6 +1,7 @@
 package application;
 
 import java.util.Date;
+import java.util.List;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
@@ -17,13 +18,19 @@ public class Program {
 		// Aqui o programa sabe que existe a classe Seller mas não conhece a implementação da Classe.
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
-		System.out.println("====== Teste 1: Seller findById =======");
-		
-		System.out.print(seller);
 
-		System.out.println();
-		Seller seller1 = sellerDao.findById(4);
-		System.out.print(seller1);
+		System.out.println("====== Teste 1: Seller findById =======");
+		Seller seller1 = sellerDao.findById(3);
+		System.out.print(seller1);		
+
+		System.out.println("\n\n====== Teste 2: Seller findByDepartment =======");
+		Department department = new Department(2, null);
+		List<Seller> list = sellerDao.findByDepartment(department);
+		for (Seller obj2 : list) {
+			System.out.println(obj2);
+		}
+
+
 	}
 
 }
